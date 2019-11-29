@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import Client from './services/contentful'
+import ProjectHeader from './components/ProjectHeader';
 
 function App() {
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    Client.getEntries().then(entries => {
+      const projects = entries.items;
+      const projectModels = projects.map(project => {
+        const {fields} = project
+        const { title: projectTitle, desc, thumbnail } = fields
+        const {url} = thumbnail.fields.file;
+       
+        return  {
+          projectTitle,
+          projectDesc: desc,
+          thumbnailUrl: url,
+        }
+      })
+      setProjects(projectModels)
+      setLoading(false)
+    })
+  },[])
+ 
+  if(loading) return <p>Loading...</p>
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {
+       projects.map(project => <ProjectHeader title={project.projectTitle} subHeading={project.projectDesc}/>)
+     }
     </div>
   );
 }
