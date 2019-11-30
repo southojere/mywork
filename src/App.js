@@ -25,6 +25,9 @@ const ListOfProjects = styled.div`
   display: flex;
   flex-direction: column;
   width: 40%;
+  @media (max-width: 576px) {
+    width:100%
+  }
 `;
 
 const ImageContainer = styled.div`
