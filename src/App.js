@@ -67,13 +67,14 @@ function App() {
       const projects = entries.items;
       const projectModels = projects.map(project => {
         const { fields } = project;
-        const { title: projectTitle, desc, thumbnail } = fields;
+        const { title: projectTitle, desc, thumbnail,websiteUrl } = fields;
         const { url } = thumbnail.fields.file;
 
         return {
           projectTitle,
           projectDesc: desc,
-          thumbnailUrl: url
+          thumbnailUrl: url,
+          websiteUrl,
         };
       });
       setProjects(projectModels);
@@ -102,7 +103,7 @@ function App() {
                 title={project.projectTitle}
                 subHeading={project.projectDesc}
                 onMouseEnter={() => setCurrentProject(project)}
-                // onMouseLeave={() => setCurrentProject(null)}
+                link={project.websiteUrl}
               />
             )}
           </Trail>
