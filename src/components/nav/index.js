@@ -16,6 +16,15 @@ const NavContainer = styled.div`
   a:hover {
     color: #ff4c5a;
   }
+
+  @media (max-width: 576px) {
+    position: unset !important;
+    margin: 3rem 0 3rem 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
 `;
 
 const Nav = () => {
