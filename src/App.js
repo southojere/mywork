@@ -48,7 +48,7 @@ const SayHi = styled.div`
   position: fixed;
   bottom: 0;
   margin-bottom: 3rem;
-  margin-left: 2rem;
+  margin-left: 3rem;
   left: 0;
   p {
     margin: 0;
