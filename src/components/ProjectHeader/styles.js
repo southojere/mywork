@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ProjectTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   margin: 1rem 0 1rem 0;
   h3,
   p {
@@ -16,4 +15,11 @@ const ProjectTextWrapper = styled.div`
   }
 `;
 
-export { ProjectTextWrapper };
+
+const Link = styled.a`
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+`
+
+export { ProjectTextWrapper, Link };

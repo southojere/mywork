@@ -6,12 +6,12 @@ const NavContainer = styled.div`
   display: flex;
   right: 4rem;
   bottom: 0;
-    margin-bottom:3rem;
+  margin-bottom: 3rem;
   a {
-      color: black;
+    color: black;
   }
-  a:first-child {
-    margin-right: 3rem;
+  a:not(:last-child) {
+    margin-right: 2rem;
   }
   a:hover {
     color: #ff4c5a;
@@ -21,8 +21,18 @@ const NavContainer = styled.div`
 const Nav = () => {
   return (
     <NavContainer>
-      <a href="https://twitter.com/jerm_je">Twitter</a>
-      <a href="https://www.linkedin.com/in/jeremy-southon-559a93176/">LinkedIn</a>
+      <a href="https://github.com/southojere" target="_blank">
+        Github
+      </a>
+      <a href="https://twitter.com/jerm_je" target="_blank">
+        Twitter
+      </a>
+      <a
+        href="https://www.linkedin.com/in/jeremy-southon-559a93176/"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
     </NavContainer>
   );
 };
