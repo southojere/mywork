@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import nprogress from '../node_modules/nprogress/nprogress'
+import '../node_modules/nprogress/nprogress.css'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
