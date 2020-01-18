@@ -1,1 +1,1 @@
-Just a simple React website, conntected to contentful to just display my work :)
+Just a simple React website, connected to contentful to display my work :)
